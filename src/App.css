@@ -381,8 +381,6 @@ svg {
   margin-top: 17px;
 }
 
-/* Staff lines appear one after another */
-
 .staff-line {
   position: absolute;
   right: 0;
@@ -497,8 +495,6 @@ svg {
   overflow: visible;
 }
 
-/* The animated circuit line is ivory-white */
-
 .circuit-path {
   fill: none;
   stroke: var(--ivory);
@@ -508,8 +504,6 @@ svg {
   vector-effect: non-scaling-stroke;
   opacity: 0;
 }
-
-/* Start drawing only after the staff lines have appeared */
 
 .circuit-path-one,
 .circuit-path-two,
@@ -533,8 +527,6 @@ svg {
   stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
 }
-
-/* Glowing signals begin after the circuit starts drawing */
 
 .signal {
   position: absolute;
@@ -672,8 +664,6 @@ svg {
 .intro > .section-index {
   padding-top: 10px;
 }
-
-/* Subtle musical watermark */
 
 .intro::after {
   content: "𝄞";
@@ -1862,6 +1852,32 @@ svg {
 
   .footer-bottom > span:nth-child(2) {
     display: none;
+  }
+
+  /* MOBILE SKILLS FIX */
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .skills-grid > div {
+    min-width: 0;
+    padding: 18px 16px;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+
+  .skills-grid h3 {
+    font-size: 23px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  .skills-grid p {
+    font-size: 13px;
+    line-height: 2;
+    overflow-wrap: anywhere;
   }
 }
 
