@@ -722,7 +722,7 @@ function App() {
             </a>
 
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/aditya-kulkarni7/"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn profile"
