@@ -77,6 +77,18 @@ const projects = [
     featured: true,
     group: "HACKATHON",
   },
+  {
+    number: "07",
+    title: "Netra — PPE Compliance Detection",
+    category: "HACKFUSHION 2.0 / COMPUTER VISION",
+    description:
+      "A computer-vision system that detects people and checks PPE compliance by identifying safety helmets and vests, helping flag potential workplace safety violations.",
+    tags: ["Computer Vision", "YOLO", "PPE Detection", "Hackathon"],
+    href: "https://netra-beta-weld.vercel.app/",
+    linkLabel: "EXPLORE LIVE PROJECT",
+    featured: true,
+    group: "HACKATHON",
+  },
 ];
 
 const certifications = [
@@ -445,14 +457,14 @@ function App() {
       <section className="work section-pad" id="work">
         <div className="section-heading">
           <p className="section-index">III. THE MAJOR WORKS</p>
-          <span>PROJECT ARCHIVE / 001—006</span>
+          <span>PROJECT ARCHIVE / 001—007</span>
         </div>
 
         <h2>Ideas made <span>tangible.</span></h2>
         <p className="work-intro">
-          Five projects developed through Flyrank AI, plus a cybersecurity
-          hackathon build. Each represents a different problem and a chance to
-          turn an idea into a working application.
+          Five projects developed through Flyrank AI, alongside two hackathon
+          projects spanning cybersecurity and computer vision. Each represents
+          a different problem turned into a working application.
         </p>
 
         <div className="project-group-label">FLYRANK AI PROJECTS</div>
@@ -462,7 +474,7 @@ function App() {
           ))}
         </div>
 
-        <div className="project-group-label">HACKATHON PROJECT</div>
+        <div className="project-group-label">HACKATHON PROJECTS</div>
         <div className="project-list">
           {projects.filter((project) => project.group === "HACKATHON").map((project) => (
             <ProjectCard key={project.number} project={project} />
@@ -497,7 +509,18 @@ function App() {
           </div>
           <div className="journey-item">
             <span>HACKFUSHION</span>
-            <div><h3>Third Place</h3><p>Four-member team; built One Click — Cyber Safety in a 20-hour hackathon.</p></div>
+            <div>
+              <h3>Third Place — One Click: Cyber Safety</h3>
+              <p>Built a gamified cybersecurity simulation with a four-member team during a 20-hour hackathon.</p>
+            </div>
+          </div>
+          <div className="journey-item">
+            <span>HACKFUSHION 2.0 / 2026</span>
+            <div>
+              <h3>3rd Place — Computer Vision</h3>
+              <p>Recognized for Netra, a PPE compliance detection system built to identify safety helmets and vests.</p>
+              <a className="project-link" href="https://netra-beta-weld.vercel.app/" target="_blank" rel="noreferrer">VIEW NETRA ↗</a>
+            </div>
           </div>
         </div>
       </section>
