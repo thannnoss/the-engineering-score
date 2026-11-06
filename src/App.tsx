@@ -10,7 +10,7 @@ const projects = [
     title: "AI Study Coach",
     category: "FLYRANK AI / ARTIFICIAL INTELLIGENCE",
     description:
-      "An AI study assistant that works with study material to help learners find answers to their questions.",
+      "An AI study assistant designed to help learners work with their study material and get answers to their questions.",
     tags: ["AI", "RAG", "Education"],
     href: "https://github.com/thannnoss/AI-Study-Coach",
     linkLabel: "VIEW SOURCE",
@@ -22,7 +22,7 @@ const projects = [
     title: "PDF Report Generator",
     category: "FLYRANK AI / AUTOMATION",
     description:
-      "A backend project focused on generating PDF reports through a software workflow.",
+      "A document-generation project focused on producing PDF reports through a software workflow.",
     tags: ["Automation", "PDF", "Backend"],
     href: "https://github.com/thannnoss/pdf-report-generator",
     linkLabel: "VIEW SOURCE",
@@ -34,7 +34,7 @@ const projects = [
     title: "Career Compass AI",
     category: "FLYRANK AI / CAREER GUIDANCE",
     description:
-      "An AI application focused on career guidance and decision-making.",
+      "An AI-focused application exploring career guidance and decision-making.",
     tags: ["AI", "Career", "Web App"],
     href: "https://careercompass-ai-71.lovable.app",
     linkLabel: "OPEN LIVE PROJECT",
@@ -46,7 +46,7 @@ const projects = [
     title: "Image Match AI",
     category: "FLYRANK AI / IMAGE MATCHING",
     description:
-      "An AI-oriented web application built around image matching.",
+      "An AI-oriented application built around an image-matching experience.",
     tags: ["AI", "Images", "Web App"],
     href: "https://content-sense-engine.lovable.app",
     linkLabel: "OPEN LIVE PROJECT",
@@ -58,7 +58,7 @@ const projects = [
     title: "AI Decision Weaver",
     category: "FLYRANK AI / DECISION SUPPORT",
     description:
-      "An AI application designed around structured decision-making.",
+      "An AI application focused on supporting structured decision-making.",
     tags: ["AI", "Decision Support", "Web App"],
     href: "https://decision-canvas-58.lovable.app",
     linkLabel: "OPEN LIVE PROJECT",
@@ -70,7 +70,7 @@ const projects = [
     title: "One Click — Cyber Safety",
     category: "HACKFUSHION / CYBERSECURITY",
     description:
-      "A gamified cyber-safety platform featuring lessons, simulations, quizzes, dashboards, and educator analytics. Built by a four-member team during a 20-hour hackathon.",
+      "A gamified cyber-safety platform with lessons, simulations, quizzes, dashboards, and educator analytics. Built by a four-member team during a 20-hour hackathon.",
     tags: ["Cybersecurity", "Gamification", "Hackathon"],
     href: "https://one-click-frontend-aexm.vercel.app/",
     linkLabel: "EXPLORE LIVE PROJECT",
@@ -221,11 +221,7 @@ function MusicalStaff() {
   );
 }
 
-function ProjectCard({
-  project,
-}: {
-  project: (typeof projects)[number];
-}) {
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   return (
     <motion.article
       className={`project-row${project.featured ? " featured-project" : ""}`}
@@ -272,11 +268,7 @@ function ProjectCard({
 function App() {
   const [search, setSearch] = useState("");
   const [issuer, setIssuer] = useState("ALL");
-
-  const issuers = [
-    "ALL",
-    ...Array.from(new Set(certifications.map((item) => item.issuer))),
-  ];
+  const issuers = ["ALL", ...Array.from(new Set(certifications.map((item) => item.issuer)))];
 
   const filteredCertifications = useMemo(
     () =>
@@ -284,10 +276,7 @@ function App() {
         const matchesSearch = `${item.title} ${item.issuer} ${item.date}`
           .toLowerCase()
           .includes(search.toLowerCase());
-
-        const matchesIssuer =
-          issuer === "ALL" || item.issuer === issuer;
-
+        const matchesIssuer = issuer === "ALL" || item.issuer === issuer;
         return matchesSearch && matchesIssuer;
       }),
     [search, issuer],
@@ -306,8 +295,8 @@ function App() {
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#work">Selected work</a>
-          <a href="#journey">Education</a>
-          <a href="#credentials">Certifications</a>
+          <a href="#journey">Journey</a>
+          <a href="#credentials">Credentials</a>
         </nav>
 
         <a className="contact-link" href="#contact">
@@ -320,13 +309,8 @@ function App() {
           aria-expanded="false"
           onClick={(event) => {
             const nav = document.querySelector(".desktop-nav");
-            const isOpen =
-              nav?.classList.toggle("mobile-nav-open") ?? false;
-
-            event.currentTarget.setAttribute(
-              "aria-expanded",
-              String(isOpen),
-            );
+            const isOpen = nav?.classList.toggle("mobile-nav-open") ?? false;
+            event.currentTarget.setAttribute("aria-expanded", String(isOpen));
           }}
         >
           <span>☰</span>
@@ -334,6 +318,12 @@ function App() {
       </header>
 
       <section className="hero" id="home">
+        <img
+          src="/aditya-portrait.png"
+          alt="Aditya Kulkarni"
+          className="hero-portrait"
+          aria-hidden="true"
+        />
         <div className="hero-meta">
           <span>
             <i /> SOFTWARE / ARTIFICIAL INTELLIGENCE
@@ -373,25 +363,15 @@ function App() {
               AI Engineering Intern at Flyrank AI.
             </p>
 
-            <a
-              href="#work"
-              className="round-link"
-              aria-label="Explore my work"
-            >
+            <a href="#work" className="round-link" aria-label="Explore my work">
               ↘
             </a>
           </motion.div>
 
           <div className="hero-actions">
-            <a
-              className="project-link"
-              href="/Aditya_Kulkarni_Resume_ATS.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="project-link" href="/Aditya-Kulkarni-Resume.pdf" target="_blank" rel="noreferrer">
               VIEW RÉSUMÉ <span aria-hidden="true">↗</span>
             </a>
-
             <a className="project-link" href="#contact">
               CONTACT ME <span aria-hidden="true">↘</span>
             </a>
@@ -408,77 +388,54 @@ function App() {
         </motion.div>
 
         <div className="hero-footer">
-          <span>01 — PROFILE</span>
-          <span>EDUCATION / EXPERIENCE / PROJECTS</span>
+          <span>01 — THE PRELUDE</span>
+          <span>DESIGNED WITH PURPOSE.</span>
           <a href="#work">EXPLORE THE WORK ↓</a>
         </div>
       </section>
 
       <section className="intro section-pad" id="about">
-        <p className="section-index">I. ABOUT</p>
-
+        <p className="section-index">I. THE PRELUDE</p>
         <div>
           <h2>
-            Learning by building.
+            Curious by nature.
             <br />
-            <span>Growing through experience.</span>
+            <span>Engineer by practice.</span>
           </h2>
-
           <p className="body-copy">
-            I enjoy working on practical software projects, exploring AI
-            technologies, and improving my development skills through
-            hands-on experience. My work includes AI applications,
-            backend development, automation, and cybersecurity.
+            I&apos;m pursuing a B.E. in Computer Science &amp; Engineering
+            (Artificial Intelligence &amp; Machine Learning) at KLS
+            Vishwanathrao Deshpande Institute of Technology. I&apos;m currently
+            in my 7th semester, with graduation expected in 2027. I enjoy
+            turning ideas into working applications and learning by building.
           </p>
-
           <div className="stat-grid">
-            <div>
-              <strong>7th</strong>
-              <span>SEMESTER</span>
-            </div>
-            <div>
-              <strong>2027</strong>
-              <span>EXPECTED GRADUATION</span>
-            </div>
-            <div>
-              <strong>7.55</strong>
-              <span>CGPA / 10</span>
-            </div>
+            <div><strong>7th</strong><span>SEMESTER</span></div>
+            <div><strong>2027</strong><span>EXPECTED GRADUATION</span></div>
+            <div><strong>7.55</strong><span>CGPA / 10</span></div>
           </div>
         </div>
       </section>
 
       <section className="experience section-pad" id="experience">
         <div className="section-heading">
-          <p className="section-index">II. EXPERIENCE</p>
-          <span>PROFESSIONAL PRACTICE / 001</span>
+          <p className="section-index">II. PROFESSIONAL PRACTICE</p>
+          <span>EXPERIENCE / 001</span>
         </div>
-
         <div className="experience-card">
           <div className="experience-topline">
             <span>BACKEND AI ENGINEERING INTERN</span>
             <span>JUL 2026 — PRESENT</span>
           </div>
-
           <h2>Flyrank AI</h2>
-
           <p className="body-copy">
-            Working on backend services and AI-powered workflows,
-            including REST APIs for AI-agent and Model Context Protocol
-            (MCP) integrations, a retrieval-augmented generation (RAG)
-            study coach, and a PDF reporting pipeline connected to SQLite.
+            Working on backend services and AI-powered workflows, including
+            REST APIs for AI-agent and Model Context Protocol (MCP)
+            integrations, a retrieval-augmented generation (RAG) study coach,
+            and a PDF reporting pipeline connected to SQLite.
           </p>
-
           <div className="project-tags">
-            {[
-              "Node.js",
-              "Express.js",
-              "REST APIs",
-              "RAG",
-              "MCP",
-              "SQLite",
-              "Git",
-            ].map((tag) => (
+            {["Node.js", "Express.js", "REST APIs", "RAG", "MCP", "SQLite", "Git"].map((tag) => (
               <span key={tag}>{tag}</span>
             ))}
           </div>
@@ -487,37 +444,29 @@ function App() {
 
       <section className="work section-pad" id="work">
         <div className="section-heading">
-          <p className="section-index">III. PROJECTS</p>
+          <p className="section-index">III. THE MAJOR WORKS</p>
           <span>PROJECT ARCHIVE / 001—006</span>
         </div>
 
-        <h2>
-          Selected <span>work.</span>
-        </h2>
-
+        <h2>Ideas made <span>tangible.</span></h2>
         <p className="work-intro">
-          Five projects from my work at Flyrank AI, along with One Click,
-          a cybersecurity project developed during a hackathon.
+          Five projects developed through Flyrank AI, plus a cybersecurity
+          hackathon build. Each represents a different problem and a chance to
+          turn an idea into a working application.
         </p>
 
         <div className="project-group-label">FLYRANK AI PROJECTS</div>
-
         <div className="project-list">
-          {projects
-            .filter((project) => project.group === "FLYRANK AI")
-            .map((project) => (
-              <ProjectCard key={project.number} project={project} />
-            ))}
+          {projects.filter((project) => project.group === "FLYRANK AI").map((project) => (
+            <ProjectCard key={project.number} project={project} />
+          ))}
         </div>
 
         <div className="project-group-label">HACKATHON PROJECT</div>
-
         <div className="project-list">
-          {projects
-            .filter((project) => project.group === "HACKATHON")
-            .map((project) => (
-              <ProjectCard key={project.number} project={project} />
-            ))}
+          {projects.filter((project) => project.group === "HACKATHON").map((project) => (
+            <ProjectCard key={project.number} project={project} />
+          ))}
         </div>
 
         <p className="project-note">
@@ -526,68 +475,42 @@ function App() {
       </section>
 
       <section className="journey section-pad" id="journey">
-        <p className="section-index">IV. EDUCATION &amp; ACHIEVEMENTS</p>
-
+        <p className="section-index">IV. THE PROGRESSION</p>
         <div>
           <h2>
-            Education and
+            Every project adds
             <br />
-            <span>experience.</span>
+            <span>another movement.</span>
           </h2>
-
           <p className="body-copy">
-            My experience includes my engineering degree, backend AI
-            development, and collaborative project work.
+            My engineering journey combines academic study, hands-on AI
+            engineering experience, collaborative project work, and continuous
+            learning across software development and cloud technologies.
           </p>
-
           <div className="journey-item">
             <span>2027 / EXPECTED</span>
-            <div>
-              <h3>B.E. Computer Science &amp; Engineering</h3>
-              <p>
-                Artificial Intelligence &amp; Machine Learning
-                <br />
-                KLS Vishwanathrao Deshpande Institute of Technology
-                <br />
-                CGPA: 7.55 / 10
-              </p>
-            </div>
+            <div><h3>B.E. Computer Science &amp; Engineering</h3><p>KLS Vishwanathrao Deshpande Institute of Technology</p></div>
           </div>
-
           <div className="journey-item">
             <span>2026 / PRESENT</span>
-            <div>
-              <h3>Backend AI Engineering Intern</h3>
-              <p>Flyrank AI</p>
-            </div>
+            <div><h3>Backend AI Engineering Intern</h3><p>Flyrank AI</p></div>
           </div>
-
           <div className="journey-item">
             <span>HACKFUSHION</span>
-            <div>
-              <h3>Third Place</h3>
-              <p>
-                Worked with a four-member team to build One Click — Cyber
-                Safety during a 20-hour hackathon.
-              </p>
-            </div>
+            <div><h3>Third Place</h3><p>Four-member team; built One Click — Cyber Safety in a 20-hour hackathon.</p></div>
           </div>
         </div>
       </section>
 
       <section className="credentials section-pad" id="credentials">
         <div className="section-heading">
-          <p className="section-index">V. CERTIFICATIONS</p>
+          <p className="section-index">V. THE CREDENTIALS</p>
           <span>{certifications.length} CERTIFICATIONS</span>
         </div>
-
-        <h2>
-          Courses and <span>credentials.</span>
-        </h2>
-
+        <h2>Learning, <span>verified.</span></h2>
         <p className="work-intro">
-          Certifications and job simulations covering AI, Claude,
-          cloud platforms, and technology.
+          Professional learning across AI, Claude, cloud platforms, and
+          technology and business job simulations.
         </p>
 
         <div className="credential-controls">
@@ -595,20 +518,11 @@ function App() {
             type="search"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search by title or issuer..."
+            placeholder="Search certifications..."
             aria-label="Search certifications"
           />
-
-          <select
-            value={issuer}
-            onChange={(event) => setIssuer(event.target.value)}
-            aria-label="Filter certifications by issuer"
-          >
-            {issuers.map((name) => (
-              <option key={name} value={name}>
-                {name === "ALL" ? "All issuers" : name}
-              </option>
-            ))}
+          <select value={issuer} onChange={(event) => setIssuer(event.target.value)} aria-label="Filter by issuer">
+            {issuers.map((name) => <option key={name} value={name}>{name}</option>)}
           </select>
         </div>
 
@@ -616,119 +530,55 @@ function App() {
           {filteredCertifications.map((credential) => (
             <article className="credential-row" key={credential.title}>
               <div>
-                <span className="project-category">
-                  {credential.issuer.toUpperCase()} /{" "}
-                  {credential.date.toUpperCase()}
-                </span>
+                <span className="project-category">{credential.issuer.toUpperCase()} / {credential.date.toUpperCase()}</span>
                 <h3>{credential.title}</h3>
               </div>
-
               {credential.href ? (
-                <a
-                  href={credential.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-link"
-                >
+                <a href={credential.href} target="_blank" rel="noreferrer" className="project-link">
                   VERIFY ↗
                 </a>
               ) : (
-                <span className="credential-unavailable">
-                  LINK NOT PROVIDED
-                </span>
+                <span className="credential-unavailable">LINK NOT PROVIDED</span>
               )}
             </article>
           ))}
-
-          {filteredCertifications.length === 0 && (
-            <p className="body-copy">
-              No certifications match your search.
-            </p>
-          )}
+          {filteredCertifications.length === 0 && <p className="body-copy">No certifications match that search.</p>}
         </div>
       </section>
 
       <section className="skills section-pad" id="skills">
         <div className="section-heading">
-          <p className="section-index">VI. TECHNICAL SKILLS</p>
-          <span>TECHNOLOGIES &amp; TOOLS</span>
+          <p className="section-index">VI. THE TOOLKIT</p>
+          <span>TECHNOLOGIES &amp; METHODS</span>
         </div>
-
-        <h2>
-          Technologies I <span>work with.</span>
-        </h2>
-
+        <h2>Tools for the <span>work.</span></h2>
         <div className="skills-grid">
-          <div>
-            <h3>LANGUAGES</h3>
-            <p>Python · Java · JavaScript · C · C++ · SQL</p>
-          </div>
-
-          <div>
-            <h3>BACKEND &amp; WEB</h3>
-            <p>
-              Node.js · Express.js · Flask · React · REST APIs · HTML · CSS
-            </p>
-          </div>
-
-          <div>
-            <h3>AI &amp; DATA</h3>
-            <p>
-              Generative AI · RAG · AI Agents · MCP · Scikit-learn ·
-              Pandas · NumPy
-            </p>
-          </div>
-
-          <div>
-            <h3>DATABASES &amp; TOOLS</h3>
-            <p>SQLite · MySQL · MongoDB · Git · GitHub · Postman</p>
-          </div>
+          <div><h3>LANGUAGES</h3><p>Python · Java · JavaScript · C · C++ · SQL</p></div>
+          <div><h3>BACKEND &amp; WEB</h3><p>Node.js · Express.js · Flask · React · REST APIs · HTML · CSS</p></div>
+          <div><h3>AI &amp; DATA</h3><p>Generative AI · RAG · AI Agents · MCP · Scikit-learn · Pandas · NumPy</p></div>
+          <div><h3>DATABASES &amp; TOOLS</h3><p>SQLite · MySQL · MongoDB · Git · GitHub · Postman</p></div>
         </div>
       </section>
 
       <footer className="footer section-pad" id="contact">
         <div>
-          <p className="section-index">VII. CONTACT</p>
-
-          <h2>
-            Let&apos;s talk about <span>your next project.</span>
-          </h2>
-
+          <p className="section-index">VII. THE CODA</p>
+          <h2>Let&apos;s build something <span>meaningful.</span></h2>
           <p className="body-copy">
-            I&apos;m open to connecting about software development,
-            AI projects, and relevant opportunities.
+            Have an engineering idea, a project, or an opportunity worth
+            exploring? Let&apos;s connect.
           </p>
-
-          <a
-            className="footer-contact"
-            href="mailto:adityakulkarni22222@gmail.com"
-          >
+          <a className="footer-contact" href="mailto:adityakulkarni22222@gmail.com">
             adityakulkarni22222@gmail.com <span>↗</span>
           </a>
         </div>
 
         <div className="footer-bottom">
           <span>ADITYA KULKARNI © 2026</span>
-          <span>SOFTWARE / ARTIFICIAL INTELLIGENCE</span>
-
+          <span>COMPOSED WITH INTENTION.</span>
           <div className="social-links">
-            <a
-              href="https://github.com/thannnoss"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub profile"
-            >
-              GH
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/aditya-kulkarni7/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn profile"
-            >
-              in
-            </a>
+            <a href="https://github.com/thannnoss" target="_blank" rel="noreferrer" aria-label="GitHub profile">GH</a>
+            <a href="https://www.linkedin.com/in/aditya-kulkarni7/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">in</a>
           </div>
         </div>
       </footer>
