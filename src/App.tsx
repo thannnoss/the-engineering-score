@@ -96,7 +96,7 @@ const certifications = [
     title: "Claude on Google Cloud",
     issuer: "Anthropic",
     date: "July 2026",
-    href: "",
+    href: "https://verify.skilljar.com/c/n78dxh4xirno",
   },
   {
     title: "Claude with Google Vertex AI",
@@ -510,7 +510,7 @@ function App() {
           <div className="journey-item">
             <span>HACKFUSHION</span>
             <div>
-              <h3>Third Place — One Click: Cyber Safety</h3>
+              <h3>3rd Place — One Click: Cyber Safety</h3>
               <p>Built a gamified cybersecurity simulation with a four-member team during a 20-hour hackathon.</p>
             </div>
           </div>
